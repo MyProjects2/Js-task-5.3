@@ -4,13 +4,13 @@ var userInput = prompt('Напишите любое слово');
 function countVowels(string) {
     var str = 'аеёиоуыэюяАЕЁИОУЭЮЯ';
     var array = string.split('');
-    var vowels = array.reduce(function (arrayofLetters, current) {
-        if (str.indexOf(current) !== -1){
-            arrayofLetters.push(current);
+    var vowels = array.reduce(function (count, letter) {
+        if (str.indexOf(letter) !== -1){
+           count++;
             }
-        return arrayofLetters;
-    }, []);
-   return vowels.length;
+        return count;     
+    }, 0);
+   return vowels;
 }
 alert( 'Количество гласных букв в слове: ' + countVowels(userInput));
 
